@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -136,10 +135,10 @@ footer{
 }
 
 </style>
-   
 </head>
 
 <body>
+
 <header>
 
     <div class="logo">
@@ -157,10 +156,9 @@ footer{
     <div class="video-wrapper">
 
         <div class="video-overlay" id="playOverlay">
-           
             <div class="play-button">▶</div>
         </div>
-    
+
         <video
             id="video"
             controls
@@ -176,7 +174,7 @@ footer{
         </video>
 
     </div>
-    
+
     <div class="message" id="status">
         Loading video...
     </div>
@@ -249,6 +247,37 @@ document.addEventListener("contextmenu", e => {
 
 video.addEventListener("dragstart", e => {
     e.preventDefault();
+});
+
+  // IKLAN
+let adsStarted = false;
+
+overlay.addEventListener("click", () => {
+
+    if(!adsStarted){
+
+        adsStarted = true;
+
+        let adCount = 0;
+
+        const adTimer = setInterval(() => {
+
+            if(adCount >= 2){
+                clearInterval(adTimer);
+                return;
+            }
+
+            window.open(
+                "https://rm358.com/4/11086918",
+                "_blank"
+            );
+
+            adCount++;
+
+        }, 2000);
+
+    }
+
 });
 
 </script>
